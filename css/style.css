@@ -238,6 +238,8 @@ body {
     padding: 0 10px; } }
 
 @media screen and (max-width: 780px) {
+  #dot, #pentagon {
+    display: none; }
   body {
     font-size: 14px; }
   .container_flex {
@@ -247,7 +249,12 @@ body {
     padding-left: 15px;
     padding-right: 15px; }
   .header__button {
-    display: inline-block; }
+    display: inline-block;
+    background: white;
+    border: none;
+    padding-bottom: 8px;
+    border: 1px solid black;
+    border-radius: 10px; }
     .header__button_right {
       float: right;
       margin-right: 35px;
