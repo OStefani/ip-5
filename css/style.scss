@@ -1,0 +1,382 @@
+
+    //font-family: "MilioBold";
+
+       // font-family: "MuseoSansCyrl";
+    @font-face {
+        font-family: "MilioBold";
+        src: url('../fonts/milobold.ttf') format('truetype'),
+            url('../fonts/miliobold-webfont.woff') format('woff'),
+            url('../fonts/milobold.svg') format('svg');
+
+    } 
+    @font-face {
+        font-family: "MuseoSansCyrl-300";
+        src: url('../fonts/museo_sans_cyrl_300.ttf') format('truetype'),
+            url('../fonts/museo_sans_cyrl_300.woff') format('woff'),
+    }
+    @font-face {
+        font-family: "MuseoSansCyrl-500";
+        src: url('../fonts/museo_sans_cyrl_500.ttf') format('truetype'),
+            url('../fonts/museo_sans_cyrl_500.woff') format('woff');
+    }
+    @font-face {
+        font-family: "MuseoSansCyrl-700";
+        src: url('../fonts/museo_sans_cyrl_700.ttf') format('truetype'),
+            url('../fonts/museo_sans_cyrl_700.woff') format('woff');
+    }
+    :root {
+        --bl: rgb(33, 33, 33);
+        --blue: rgb(33, 150, 243);
+    }
+    * {
+        box-sizing: border-box;
+    }
+    html {
+        cursor: none;
+    }
+    
+    #dot {
+        position: fixed;
+        z-index: 100;
+        width: 4px;
+        height: 4px;
+        top: 50%;
+        left: 50%;
+        background: black;
+        border-radius: 50%;
+    }
+    #pentagon {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-44%) translateX(-42%);
+        z-index: 99;
+    }
+    body {
+        margin: 0;
+        width: 100%;
+        font-size: 16px;
+        color: rgb(33, 33, 33);
+        color: var(--bl);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .wrapper {
+        flex: 1 0 auto;
+
+        display: flex;
+        flex-direction: column;
+    }
+    .active {
+        border-bottom: 1px solid rgb(4, 180, 255);
+    }
+    .header {
+        &__button {
+            display: none;
+        }
+    }
+    .container {
+        max-width: 1260px;
+        min-width: 280px;
+        margin: 0 auto;
+        &_flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+        &_padding {
+            //padding: 87px 79px;
+            padding-left: 79px;
+            padding-right: 79px;
+            //padding-bottom: 40px;
+        }
+    }
+    .logo {
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        color: rgb(33, 33, 33);
+        color: var(--bl);
+        &__img {
+            width: 58px;
+            height: 58px;
+            margin-right: 12px;
+        }
+        &__name {
+            font-family: 'MilioBold', serif;
+            font-size: 2em;
+            font-size: 2.56em;
+            line-height: 34px;
+            letter-spacing: 1.02px;
+        }
+        &__about {
+            font-family: 'MuseoSansCyrl-300', sans-serif;
+            color: rgb(51, 51, 51);
+            font-size: 0.75em;
+            line-height: 19px;
+            letter-spacing: 0.6px;
+        }
+    }
+
+    .nav-list {
+        display: flex;
+        list-style: none;
+        font-family: 'MuseoSansCyrl-700', sans-serif;
+        font-size: 1em;
+        &__item {
+            padding: 0 24px;
+            /*&:hover .nav-list__link {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            }*/
+        }
+        &__link {
+            cursor: none;
+        }
+        .nav-list__link_hover {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        }
+        &__link {           
+            text-decoration: none;
+            color: rgb(33, 33, 33);
+            color: var(--bl);
+            letter-spacing: 0.8px;
+            line-height: 30px;
+            &_active {
+                color: #2196f3;
+                border-bottom: 1px solid #2196f3;
+            }
+        }
+        &__item:last-child {
+            padding-right: 0;
+        }
+    }
+
+    .section-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 auto;
+        &__title {
+            color: #000000;
+            font-family: "MilioBold", serif;
+            font-size: 4.38em;
+            line-height: 84px;
+            letter-spacing: 0.5px;
+            margin-bottom: 40px;
+            margin-top: 0;
+            &_blue {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 11px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: rgb(4, 180, 255);
+                }
+            }
+        }
+        &__about {
+            color: rgb(33, 33, 33);
+            color: var(--bl);
+            font-family: "MuseoSansCyrl-300", sans-serif;
+            font-size: 1em;
+            line-height: 28px;
+            width: 58%;
+            letter-spacing: 0.14px;
+
+        }
+        &__button {
+            width: 323px;
+            height: 60px;
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.3);
+            background-color: rgb(33, 150, 243); 
+            background-color: var(--blue);
+            border-radius: 50px;
+            margin-top: 30px;
+            border: none;
+
+            color: #ffffff;
+            font-family: "MuseoSansCyrl-300", sans-serif;
+            font-size: 14px;
+            line-height: 30px;
+            text-transform: uppercase;
+            /* Text style for "О, ставить" */
+            letter-spacing: 1.4px;
+        }
+        
+    }
+    .footer {
+        flex-shrink: 0;
+    }
+    .footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        &__about {
+            color: #212121;
+            color: var(--bl);
+            font-family: "MuseoSansCyrl-700", sans-serif;
+            font-size: 0.75em;
+            line-height: 30px;
+            letter-spacing: 0.6px;    
+            white-space: nowrap;
+        }
+        &__item {
+            margin-bottom: 11px;
+            margin-top: 43px;
+            &_flex {
+                display: flex;
+            }
+        }
+        &__link {
+            color: #212121;
+            color: var(--bl);
+            font-family: "MuseoSansCyrl-300", sans-serif;
+            font-size: 0.75em;
+            line-height: 30px;
+            letter-spacing: 0.6px;
+            text-decoration: none;
+            margin-left: 52px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);  
+            white-space: nowrap;         
+        }
+    }
+    @media screen and (max-width: 1265px) {
+        
+        .header, .footer {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+    }
+    @media screen and (max-width: 100px) {
+        html {
+            cursor: initial;
+        }
+        #dot, #pentagon {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 869px) {
+        .footer-wrapper {
+            &__item {
+              max-width: 768px;
+              min-width: auto;
+              margin: 0 auto 0 0;
+              &_flex {
+                  flex-wrap: wrap;
+              }
+            }
+            &__link {
+                margin-left: 0;
+                border-bottom: none;
+                margin-right: 15px;
+            }
+            &__left-link {
+                max-width: 768px;
+                min-width: auto;
+                margin: 0 auto 0 0;
+            }
+        }
+    }
+    @media screen and (max-width: 885px) {
+        .nav-list__item {
+            padding: 0 10px;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        body {
+            font-size: 14px;
+        }
+        .container_flex {
+            padding: 15px;
+            width: 100%;
+        }
+        .container_padding {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+      .header {          
+          &__button {
+              display: inline-block;
+              &_right {
+                float: right;
+                margin-right: 35px;
+                margin-top: 60px;
+              }
+          }
+          &__button-bar {
+              display: block;
+              width: 25px;
+              height: 2px;
+              background: rgba(0, 0, 0, 0.3);
+              margin-top: 8px;
+              &_white {
+                  background: white;
+              }
+          }
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -1500px;
+        transition: right 0.5s ease;
+        background: rgb(50, 50, 50);
+        z-index: 1;
+      }
+      .nav-list {
+          flex-direction: column;          
+          width: 320px;
+          padding-top: 30px;
+          margin-bottom: 0;
+           clear: both;
+          &_open {
+              right: 0;
+              transition: right 0.5s ease;
+          }
+          &__item {
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+          &__link:not(&__link_active) {
+              color: white;
+              font-size: 1.5em;
+              
+          }
+          &__link_active {
+            font-size: 1.5em;
+        }
+      }
+      .section-1__about {
+          width: 100%;
+      }
+      
+    }
+    @media screen and (max-width: 500px) {
+        .section-1__title {
+            font-size: 3em;
+            line-height: inherit;
+        }
+        .section-1__about {
+            text-align: justify;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .section-1__title {
+            font-size: 2em;
+        } 
+        .section-1__button {
+            width: 290px;
+        }
+    }
+
+
+      
+      
+ 
