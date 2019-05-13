@@ -50,7 +50,7 @@ let dot = document.getElementById('dot');
             setTimeout(() => {
                 pentagon.style.left = x + 'px';
                 pentagon.style.top = y + 'px';
-            }, 500);
+            }, 50);
         }
 
         
@@ -64,6 +64,18 @@ let dot = document.getElementById('dot');
                })
                target.classList.add('nav-list__link_hover')
             }
+        })
+    });
+
+    listOfLinks.forEach(link => {
+        link.addEventListener('mouseleave', (e) => {
+            console.log('target: ', e.target);
+            console.log('currentTarget: ', e.currentTarget);
+           let target = e.currentTarget.children[0];
+           if (target.classList.contains('nav-list__link_hover')) {
+                target.classList.remove('nav-list__link_hover');
+           };
+           
         })
     });
 

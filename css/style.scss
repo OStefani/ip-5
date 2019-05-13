@@ -44,13 +44,15 @@
         left: 50%;
         background: black;
         border-radius: 50%;
+        pointer-events: none;
     }
     #pentagon {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translateY(-44%) translateX(-42%);
-        z-index: 99;
+        z-index: 100;
+        pointer-events: none;
     }
     body {
         margin: 0;
@@ -99,6 +101,7 @@
         align-items: center;
         color: rgb(33, 33, 33);
         color: var(--bl);
+        cursor: none;
         &__img {
             width: 58px;
             height: 58px;
@@ -206,6 +209,8 @@
             text-transform: uppercase;
             /* Text style for "О, ставить" */
             letter-spacing: 1.4px;
+            cursor: none;
+            outline: none;
         }
         
     }
@@ -243,7 +248,8 @@
             text-decoration: none;
             margin-left: 52px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.3);  
-            white-space: nowrap;         
+            white-space: nowrap; 
+            cursor: none;        
         }
     }
     @media screen and (max-width: 1265px) {
